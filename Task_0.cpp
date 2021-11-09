@@ -2,45 +2,44 @@
 #include <cstdlib>
 
 using namespace std;
-// Функция сортровки элементов массива
+// Р¤СѓРЅРєС†РёСЏ СЃРѕСЂС‚СЂРѕРІРєРё СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 int sort(const int size, int* values);
 
-// Функция заполнения массива случайными значениями
+// Р¤СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
 int massSet(const int size, int* values);
 
-// Функция отображения массива 
+// Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РјР°СЃСЃРёРІР°
 int printMass(const int size, int* values);
 
-// Функция задания размера массива
+// Р¤СѓРЅРєС†РёСЏ Р·Р°РґР°РЅРёСЏ СЂР°Р·РјРµСЂР° РјР°СЃСЃРёРІР°
 int setSize();
 
-// Тело функции
+// РўРµР»Рѕ С„СѓРЅРєС†РёРё
 int main()
 {
     setlocale(LC_ALL, "Russian");
     const int size = setSize(); 
     int* values = new int[size];
-    massSet(size, values); // Заполнение массива
-    cout << "Заданный Массив:" << "\n";
-    printMass(size, values); // Вывод массива
-    sort(size, values); // Сортировка массива
-    cout << "Отсортированный массив:" << "\n";
-    printMass(size, values); // Вывод отсортированного массива
+    massSet(size, values); // Р—Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР°
+    cout << "Р—Р°РґР°РЅРЅС‹Р№ РњР°СЃСЃРёРІ:" << "\n";
+    printMass(size, values); // Р’С‹РІРѕРґ РјР°СЃСЃРёРІР°
+    sort(size, values); // РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР°
+    cout << "РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ:" << "\n";
+    printMass(size, values); // Р’С‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°
     cin.get();
     return 0;
 }
 
-
 int setSize()
 {
     int size;
-    cout << "Задайте размерность массива: ";
-    while (true)    // Проверка на корректнсть введённых символов
+    cout << "Р—Р°РґР°Р№С‚Рµ СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ РјР°СЃСЃРёРІР°: ";
+    while (true)    // РџСЂРѕРІРµСЂРєР° РЅР° РєРѕСЂСЂРµРєС‚РЅСЃС‚СЊ РІРІРµРґС‘РЅРЅС‹С… СЃРёРјРІРѕР»РѕРІ
     {
         cin >> size;
         if (size < 0)
         {
-            cout << "Задайте положительное чило элементов массива: ";
+            cout << "Р—Р°РґР°Р№С‚Рµ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С‡РёР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: ";
         }
         else return size;
     }
@@ -62,7 +61,6 @@ int sort(const int  size, int* values)
     return 0;
 }
 
-
 int massSet(const int  size, int* values)
 {
     srand(clock());
@@ -72,7 +70,6 @@ int massSet(const int  size, int* values)
     }
     return 0;
 }
-
 
 int printMass(const int  size, int* values)
 {
