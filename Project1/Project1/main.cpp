@@ -7,6 +7,6 @@
 
 int main()
 {
-    std::cout << "answer is " << " Hello" << std::endl;
+    std::cout << "answer is " << " Hello StaticLib1" << std::endl;
     return 0;
 }
