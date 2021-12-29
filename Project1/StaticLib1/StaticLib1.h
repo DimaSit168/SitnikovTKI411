@@ -10,15 +10,22 @@ class StaticLib1
 
 {
 public:
+	StaticLib1();
 	/**
 	*  \brief Конструктор по умолчанию.
+	*  \param value Последовательность значений, добавляемых в стек при инициализации.
 	*/
-	StaticLib1();
+	StaticLib1(const std::initializer_list<int> value);
 	
 	/**
 	*  \brief Создание объекта из последовательности.
 	*/
 	StaticLib1(const std::initializer_list<int> value);
+	~StaticLib1();
+
+	/**
+	*  \brief Деструктор.
+	*/
 	~StaticLib1();
 
 	/**
@@ -51,6 +58,7 @@ public:
 	*/
 	std::size_t GetSize() const;
 	bool isEmpty() const;
+	friend std::ostream& operator << (std::ostream& out, const StaticLib1& stack);
 
 private:
 	/**

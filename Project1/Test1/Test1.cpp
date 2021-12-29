@@ -27,7 +27,7 @@ namespace Test1
 			const size_t expectedSize = 5;
 
 			// act
-			const auto result = new StaticLib1;	//было	
+			// const auto result = new StaticLib1;	//было	
 			StaticLib1 result = { 1, 2, 3, 4, 5 }; //стало
 			
 			//assert
@@ -35,6 +35,19 @@ namespace Test1
 			Assert::AreEqual(5, result.Pop());
 		}
 
+		TEST_METHOD(TestMethod3)
+		{
+			//Arrange
+			const StaticLib1 stack = { 1, 2, 3, 4, 5 };
+			std::stringstream buffer;
+			const std::string expected = "5 4 3 2 1 ";
+
+			//Act
+			buffer << stack;
+
+			//Assert
+			Assert::AreEqual(expected, buffer.str());
+		}
 
 	};
 }
