@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
+#include "../StaticLib1/StaticLib1.h" 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -11,14 +12,29 @@ namespace Test1
 		
 		TEST_METHOD(TestMethod1)
 		{
+			//arrange
+
+			//act
+			const auto result = new StaticLib1();
+
+			//assert
+			Assert::IsNotNull(result);
+		}
+		
+		TEST_METHOD(TestMethod2)
+		{
 			// arrange
-			const size_t expectedSize = 0;
+			const size_t expectedSize = 5;
 
 			// act
 			const auto result = new StaticLib1;	//было	
-			StaticLib1 result = { 1, 2, 3, 4, 5 }; //6стало
+			StaticLib1 result = { 1, 2, 3, 4, 5 }; //стало
 			
-
+			//assert
+			Assert::AreEqual(expectedSize, result.GetSize());
+			Assert::AreEqual(5, result.Pop());
 		}
+
+
 	};
 }

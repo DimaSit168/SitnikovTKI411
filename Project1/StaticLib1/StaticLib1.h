@@ -1,5 +1,6 @@
 #pragma once
 #include <initializer_list>
+#include <iostream>
 
 /**
  *  \brief Класс стек для хранения целых чисел.
@@ -17,7 +18,7 @@ public:
 	/**
 	*  \brief Создание объекта из последовательности.
 	*/
-	StaticLib1(std::initializer_list<int> value);
+	StaticLib1(const std::initializer_list<int> value);
 	~StaticLib1();
 
 	/**
@@ -36,7 +37,7 @@ public:
 	*  \brief Возвращает верхний элемент стэка (без удаления элемента).
 	*  \return value Целое значение.
 	*/
-	int Peek();
+	int Peek() const;
 
 	/**
 	*  \brief Возвращает количество элементов стэка.
@@ -60,23 +61,25 @@ private:
 	{
 	public:
 		/**
-		*  \brief Конструктор по умолчанию.
-		*/
-		StaticLib1Element();
-
-		/**
 		*  \brief Конструктор с параметрами.
 		*  \param value Целое значение.
+		*  \param next
 		*/
-		StaticLib1Element(int value);
+		StaticLib1Element(int value, StaticLib1Element* next = nullptr);
 
 		/**
 		*  \brief Деструктор.
 		*/
 		~StaticLib1Element();
 
-	private:
+		/**
+		*  \brief Хранящееся значение.
+		*/
 		int value;
+
+		/**
+		*  \brief Ссылка на следующий элемент.
+		*/
 		StaticLib1Element* next;
 	};
 
@@ -85,6 +88,10 @@ private:
 	StaticLib1Element* top;
 
 	StaticLib1(const StaticLib1& rhs);
+
+	StaticLib1(const StaticLib1&&);
+
+	void Remove();
 
 	StaticLib1 operator = (const StaticLib1& rhs);
 };
