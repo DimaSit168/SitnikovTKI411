@@ -33,6 +33,18 @@ public:
 	int Pop();
 
 	/**
+	*  \brief Возвращает верхний элемент стэка (без удаления элемента).
+	*  \return value Целое значение.
+	*/
+	int Peek();
+
+	/**
+	*  \brief Возвращает количество элементов стэка.
+	*  \return value Целое значение.
+	*/
+	int Count();
+
+	/**
 	*  \brief .
 	*  \return .
 	*/
@@ -41,8 +53,8 @@ public:
 
 private:
 	/**
-   *  \brief Элементы стека для хранения целых чисел.
-   */
+    *  \brief Элементы стека для хранения целых чисел.
+    */
 	
 	class StaticLib1Element
 	{
@@ -74,5 +86,5 @@ private:
 
 	StaticLib1(const StaticLib1& rhs);
 
-	StaticLib1 operator= (const StaticLib1& rhs);
+	StaticLib1 operator = (const StaticLib1& rhs);
 };
