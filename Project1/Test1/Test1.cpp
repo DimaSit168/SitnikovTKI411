@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
-#include "../StaticLib1/StaticLib1.h" 
+#include "../StaticLib1/Stack.h" 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -15,7 +15,7 @@ namespace Test1
 			//arrange
 
 			//act
-			const auto result = new StaticLib1();
+			const auto result = new Stack();
 
 			//assert
 			Assert::IsNotNull(result);
@@ -28,7 +28,7 @@ namespace Test1
 
 			// act
 			// const auto result = new StaticLib1;	//было	
-			StaticLib1 result = { 1, 2, 3, 4, 5 }; //стало
+			Stack result = { 1, 2, 3, 4, 5 }; //стало
 			
 			//assert
 			Assert::AreEqual(expectedSize, result.GetSize());
@@ -38,7 +38,7 @@ namespace Test1
 		TEST_METHOD(TestMethod3)
 		{
 			//Arrange
-			const StaticLib1 stack = { 1, 2, 3, 4, 5 };
+			const Stack stack = { 1, 2, 3, 4, 5 };
 			std::stringstream buffer;
 			const std::string expected = "5 4 3 2 1 ";
 
