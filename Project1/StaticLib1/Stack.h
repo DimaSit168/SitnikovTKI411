@@ -80,12 +80,12 @@ private:
 		*  \param value Целое значение.
 		*  \param next
 		*/
-		StackElement(int value, StackElement* next = nullptr);
+		StackElement(int value, StackElement* next = nullptr) = delete;
 
 		/**
 		*  \brief Деструктор.
 		*/
-		~StackElement();
+		~StackElement() = delete;
 
 		/**
 		*  \brief Хранящееся значение.
