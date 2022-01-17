@@ -10,7 +10,7 @@ namespace Test1
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestClassCreation)
 		{
 			//arrange
 
