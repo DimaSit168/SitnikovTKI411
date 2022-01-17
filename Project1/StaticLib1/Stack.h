@@ -15,13 +15,13 @@ public:
 	*  \brief Конструктор по умолчанию.
 	*  \param value Последовательность значений, добавляемых в стек при инициализации.
 	*/
-	Stack(const std::initializer_list<int> value);
+	//Stack(const std::initializer_list<int> value);
 	
 	/**
 	*  \brief Создание объекта из последовательности.
 	*/
 	Stack(const std::initializer_list<int> value);
-	~Stack();
+	//~Stack();
 
 	/**
 	*  \brief Деструктор.
@@ -80,12 +80,12 @@ private:
 		*  \param value Целое значение.
 		*  \param next
 		*/
-		StackElement(int value, StackElement* next = nullptr) = delete;
+		StackElement(int value, StackElement* next = nullptr);
 
 		/**
 		*  \brief Деструктор.
 		*/
-		~StackElement() = delete;
+		~StackElement();
 
 		/**
 		*  \brief Хранящееся значение.
